@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yourdfpy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yourdfpy-{{ version }}.tar.gz
   sha256: 6075b643482b5e4c406fa053597484c450c8823058d4068c091f54238808ab1a
 
 build:
@@ -14,17 +14,17 @@ build:
   entry_points:
     - yourdfpy = yourdfpy.viz:run
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools >=46.1.0
     - setuptools-scm >=5
     - wheel
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - importlib-metadata
     - lxml
     - trimesh >=3.11.2
@@ -40,6 +40,7 @@ test:
   requires:
     - pip
     - setuptools
+    - python {{ python_min }}
 
 about:
   home: https://github.com/clemense/yourdfpy/
