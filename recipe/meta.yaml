@@ -1,5 +1,5 @@
 {% set name = "yourdfpy" %}
-{% set version = "0.0.57" %}
+{% set version = "0.0.58" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yourdfpy-{{ version }}.tar.gz
-  sha256: 9c2047bfb8d025d4cfacbbbdeba3a3f69b4e76114bf5461787ffc1c6fcabe032
+  sha256: 68d23688802c8e23843a8981f828bcca9a7875cdb02be7f3a0e67b42929727f3
 
 build:
   noarch: python
